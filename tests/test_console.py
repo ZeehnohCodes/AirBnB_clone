@@ -469,7 +469,7 @@ class TestHBNBCommand_destroy(unittest.TestCase):
         except IOError:
             pass
         try:
-         os.rename("tmp", "file.json")
+            os.rename("tmp", "file.json")
         except IOError:
             pass
         storage.reload()
@@ -916,7 +916,7 @@ class TestHBNBCommand_update(unittest.TestCase):
             self.assertEqual(correct, output.getvalue().strip())
 
     def test_update_missing_id_dot_notation(self):
-       correct = "** instance id missing **"
+        correct = "** instance id missing **"
         with patch("sys.stdout", new=StringIO()) as output:
             self.assertFalse(HBNBCommand().onecmd("BaseModel.update()"))
             self.assertEqual(correct, output.getvalue().strip())
